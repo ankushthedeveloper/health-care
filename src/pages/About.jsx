@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaHeartbeat, FaUserMd, FaHospitalAlt, FaLaptopMedical } from 'react-icons/fa';
+import HowItWorks from '../components/HowItWorks';
+import ApproachSection from '../components/OurApproach';
 
 const About = () => {
   return (
@@ -14,7 +16,7 @@ const About = () => {
         </p>
 
         {/* 4 Pillars */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 text-center mb-16">
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
             <FaHeartbeat className="text-4xl text-red-500 mx-auto mb-4" />
             <h4 className="text-xl font-semibold mb-2">Compassionate Care</h4>
@@ -48,6 +50,9 @@ const About = () => {
             Explore Our Services
           </button>
         </div>
+       <ApproachSection/>
+     
+
       </div>
     </div>
   );
