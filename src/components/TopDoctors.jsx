@@ -1,45 +1,25 @@
 import React from "react";
-import { FaStar, FaArrowRight } from "react-icons/fa";
-
-const doctors = [
-  {
-    name: "Dr. Aakash Mehta",
-    specialization: "Cardiologist",
-    experience: "10+ Years",
-    location: "Delhi",
-    rating: 4.8,
-    image: "https://randomuser.me/api/portraits/men/55.jpg",
-  },
-  {
-    name: "Dr. Nidhi Sharma",
-    specialization: "Dermatologist",
-    experience: "8+ Years",
-    location: "Mumbai",
-    rating: 4.6,
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-  {
-    name: "Dr. Aman Joshi",
-    specialization: "Orthopedic",
-    experience: "12+ Years",
-    location: "Bangalore",
-    rating: 4.9,
-    image: "https://randomuser.me/api/portraits/men/64.jpg",
-  },
-  {
-    name: "Dr. Shalini Kapoor",
-    specialization: "Gynecologist",
-    experience: "15+ Years",
-    location: "Chandigarh",
-    rating: 4.7,
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
-  },
-];
+import { FaStar, FaArrowRight, FaLocationArrow, FaPlayCircle } from "react-icons/fa";
+import { doctors } from "../assets/assets";
+import { Link, useNavigate } from "react-router-dom";
+import DoctorCard from "./DoctorCard";
 
 const TopDoctors = () => {
+  const navigate=useNavigate();
   return (
-     <div>
-        <h1></h1>
+     <div className="flex flex-col items-center gap-4 my-16 text-gray-900 md:mx-10">
+      <h1 className="text-2xl font-medium ">Top Doctors near You to book </h1>
+      <p>Simply browse through our extensive list of doctors</p>
+       <div className="w-full grid grid-cols-auto gap-4 pt-5 gap-y-6 px-3 sm:px-0">
+        {
+          doctors.slice(0,10).map((item,index)=>(
+            <DoctorCard item={item} index={index} />
+          ))
+        }
+       </div>
+       <Link to={'/doctors'}>
+       <button onClick={()=>scrollTo(0,0)} className="bg-teal-100 text-gray-600 px-12 py-3 rounded-full mt-10 hover:bg-teal-200">more Doctors</button>
+       </Link>
      </div>
   )
 };
