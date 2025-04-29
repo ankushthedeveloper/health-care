@@ -15,9 +15,7 @@ const ContactusBanner = () => {
         </div>
          
         {/* right side */}
-        <div>
-           <img className='h-[250px] sm:w-80 sm:h-[unset]  bg-blue-200 relative bottom-[-17px]' src={assets.appointment_img} alt="" />
-        </div>
+        <img className='h-[250px] sm:w-80 sm:h-[unset] right-[50px] relative bottom-[-17px]' src={assets.appointment_img} alt="" />
     </div>
   )
 }
