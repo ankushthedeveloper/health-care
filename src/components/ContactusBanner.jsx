@@ -1,7 +1,7 @@
 import React from 'react'
 import { assets } from '../assets/assets';
 
-const Banner = () => {
+const ContactusBanner = () => {
     const user=true;
   return (
     <div className='bg-blue-200 p-4 flex items-center justify-around rounded-xl relative'>
@@ -22,4 +22,4 @@ const Banner = () => {
   )
 }
 
-export default Banner 
+export default ContactusBanner 
