@@ -38,7 +38,7 @@ import Neurologist from './Neurologist.svg'
 import Pediatricians from './Pediatricians.svg'
 import quickmedlogo from './quickMedlogo.png'
 import headerDoc from './header-group.jpg'
-
+import happyDoctor from './doctors/female doctor.jpg'
 export const assets = {
     appointment_img,
     header_img,
@@ -58,7 +58,8 @@ export const assets = {
     stripe_logo,
     razorpay_logo,
     quickmedlogo,
-    headerDoc
+    headerDoc,
+    happyDoctor
 }
 
 export const specialityData = [

@@ -4,7 +4,7 @@ import {specialityData} from "../assets/assets"
 
 const TopSpecializations = () => {
   return (
-    <div className='rounded-md px-6 md:px-16 py-20 bg-gradient-to-b from-[#e0f7f9] to-white'>
+    <div id='Specializations' className='rounded-md px-6 md:px-16 py-20 bg-gradient-to-b from-[#e0f7f9] to-white'>
       <h2 className='text-4xl font-extrabold text-center text-[#00796b] mb-16 tracking-wide'>
         🧑‍⚕️ Explore Top Specializations
       </h2>

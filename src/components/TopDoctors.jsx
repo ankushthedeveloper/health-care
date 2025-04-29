@@ -1,11 +1,11 @@
-import React from "react";
-import { FaStar, FaArrowRight, FaLocationArrow, FaPlayCircle } from "react-icons/fa";
-import { doctors } from "../assets/assets";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { AppContext } from "../context/AppContext";
 import DoctorCard from "./DoctorCard";
 
 const TopDoctors = () => {
   const navigate=useNavigate();
+  const {doctors} =useContext(AppContext);
   return (
      <div className="flex flex-col items-center gap-4 my-16 text-gray-900 md:mx-10">
       <h1 className="text-2xl font-medium ">Top Doctors near You to book </h1>
@@ -17,9 +17,7 @@ const TopDoctors = () => {
           ))
         }
        </div>
-       <Link to={'/doctors'}>
-       <button onClick={()=>scrollTo(0,0)} className="bg-teal-100 text-gray-600 px-12 py-3 rounded-full mt-10 hover:bg-teal-200">more Doctors</button>
-       </Link>
+       <button onClick={()=>{navigate('/doctors') ;scrollTo(0,0)}} className="bg-teal-100 text-gray-600 px-12 py-3 rounded-full mt-10 hover:bg-teal-200">more Doctors</button>
      </div>
   )
 };
