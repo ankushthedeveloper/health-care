@@ -42,14 +42,14 @@ const testimonials = [
     message:
       "Absolutely love the interface and ease of use. I found a specialist and booked an appointment in less than 2 minutes!",
     image: "https://randomuser.me/api/portraits/women/63.jpg",
-  }
+  },
 ];
 
 const Testimonials = () => {
   return (
     <div className="bg-[#d2e2d5] py-16 px-6 md:px-20 rounded-lg">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12">
-        What Our Patients Say
+        What Our Users Say
       </h2>
 
       <div className="overflow-x-auto md:overflow-visible">
@@ -64,16 +64,14 @@ const Testimonials = () => {
                 alt={t.name}
                 className="w-20 h-20 rounded-full mb-4 object-cover"
               />
-              <p className="text-gray-600 text-sm italic mb-4">
-                “{t.message}”
-              </p>
+              <p className="text-gray-600 text-sm italic mb-4">“{t.message}”</p>
               <h4 className="text-primary font-semibold">{t.name}</h4>
               <span className="text-gray-400 text-sm">{t.city}</span>
             </div>
           ))}
         </div>
       </div>
-    </ div>
+    </div>
   );
 };
 
