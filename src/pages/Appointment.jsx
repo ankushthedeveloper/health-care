@@ -5,11 +5,18 @@ import { assets } from "../assets/assets";
 import RelatedDoctors from "../components/RelatedDoctors";
 import { toast } from "react-toastify";
 import axios from "axios";
+import Loader from "../components/Loader";
 
 const Appointment = () => {
   const { docId } = useParams();
-  const { doctors, currencySymbol, backendUrl, token, getDoctorsData } =
-    useContext(AppContext);
+  const {
+    doctors,
+    currencySymbol,
+    backendUrl,
+    token,
+    getDoctorsData,
+    loading,
+  } = useContext(AppContext);
   const daysOfWeek = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
   const navigate = useNavigate();
@@ -18,7 +25,7 @@ const Appointment = () => {
   const [docSlots, setDocSlots] = useState([]);
   const [slotIndex, setSlotIndex] = useState(0);
   const [slotTime, setSlotTime] = useState("");
-
+  const [loadingLocal, setLoadingLocal] = useState(false);
   const fetchDocInfo = async () => {
     const docInfo = doctors.find((doc) => doc._id === docId);
     setDocInfo(docInfo);
@@ -96,7 +103,7 @@ const Appointment = () => {
 
     try {
       const date = docSlots[slotIndex][0].datetime;
-
+      setLoadingLocal(true);
       let day = date.getDate();
       let month = date.getMonth() + 1;
       let year = date.getFullYear();
@@ -119,6 +126,7 @@ const Appointment = () => {
       console.log(error);
       toast.error(error.message);
     }
+    setLoadingLocal(false);
   };
 
   useEffect(() => {
@@ -133,10 +141,12 @@ const Appointment = () => {
     console.log(docSlots);
   }, [docSlots]);
 
-  return (
-    docInfo && (
-      <div>
-        {/* -------------------- Doctor Details -------------------- */}
+  return !docInfo || loading || loadingLocal ? (
+    <Loader />
+  ) : (
+    <div>
+      {/* -------------------- Doctor Details -------------------- */}
+      {
         <div className="flex flex-col sm:flex-row gap-4">
           <div>
             <img
@@ -179,8 +189,10 @@ const Appointment = () => {
             </p>
           </div>
         </div>
+      }
 
-        {/* -------------------- Booking Slots -------------------- */}
+      {/* -------------------- Booking Slots -------------------- */}
+      {
         <div className="sm:ml-72 sm:pl-4 mt-4 font-medium text-gray-700">
           <p>Booking slots</p>
           <div className="flex gap-3 items-center w-full overflow-x-scroll mt-4">
@@ -224,11 +236,11 @@ const Appointment = () => {
             Book an appointment
           </button>
         </div>
+      }
 
-        {/* -------------------- Listing Related Doctors -------------------- */}
-        <RelatedDoctors docId={docId} speciality={docInfo.speciality} />
-      </div>
-    )
+      {/* -------------------- Listing Related Doctors -------------------- */}
+      <RelatedDoctors docId={docId} speciality={docInfo.speciality} />
+    </div>
   );
 };
 

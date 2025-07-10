@@ -1,6 +1,11 @@
 import React from "react";
-import { FaHeartbeat, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import {assets} from '../assets/assets'
+import {
+  FaHeartbeat,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import { assets } from "../assets/assets";
 const Footer = () => {
   return (
     <footer className="bg-[#E0F7FA] text-gray-800 px-6 py-10 mt-10 w-full">
@@ -11,7 +16,9 @@ const Footer = () => {
             <img src={assets.quickmedlogo} width={"150px"} alt="" />
           </div>
           <p className="text-sm">
-            Your trusted partner for fast, reliable, and compassionate healthcare. Book appointments with top doctors near you in just a few clicks.
+            Your trusted partner for fast, reliable, and compassionate
+            healthcare. Book appointments with top doctors near you in just a
+            few clicks.
           </p>
         </div>
 
@@ -19,10 +26,21 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="/about" className="hover:text-blue-600">About Us</a></li>
-            <li><a href="/doctors" className="hover:text-blue-600">Find Doctors</a></li>
-            <li><a href="/contact" className="hover:text-blue-600">Contact</a></li>
-            <li><a href="/privacy" className="hover:text-blue-600">Privacy Policy</a></li>
+            <li>
+              <a href="/about" className="hover:text-blue-600">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="/doctors" className="hover:text-blue-600">
+                Find Doctors
+              </a>
+            </li>
+            <li>
+              <a href="/contact" className="hover:text-blue-600">
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
 

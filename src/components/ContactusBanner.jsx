@@ -1,9 +1,11 @@
 import React from "react";
 import { assets } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 
 const ContactusBanner = () => {
-  const user = false;
+  const { token } = useContext(AppContext);
   const navigate = useNavigate();
   return (
     <div className="bg-blue-200 p-4 flex items-center justify-around rounded-xl relative">
@@ -17,12 +19,12 @@ const ContactusBanner = () => {
         </div>
         <button
           onClick={() => {
-            user ? navigate("/contact") : navigate("/login");
+            token ? navigate("/contact") : navigate("/login");
             scrollTo(0, 0);
           }}
           className="border-blue-400 bg-blue-800 text-white p-4 rounded-lg font-medium m-4 hover:bg-blue-500"
         >
-          {user ? "Contact Us" : "Create account"}
+          {token ? "Contact Us" : "Create account"}
         </button>
       </div>
 
