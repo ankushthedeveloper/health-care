@@ -19,7 +19,7 @@ const testimonials = [
     name: "Priya Desai",
     city: "Mumbai",
     message:
-      "I consulted a gynecologist online via QuickMed and it was a great experience. Thank you for making healthcare easy!",
+      "I consulted a Gynaecologist online via QuickMed and it was a great experience. Thank you for making healthcare easy!",
     image: "https://randomuser.me/api/portraits/women/47.jpg",
   },
   {

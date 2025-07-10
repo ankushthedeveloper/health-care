@@ -60,15 +60,15 @@ const Doctors = () => {
             </p>
             <p
               onClick={() =>
-                speciality === "Gynecologist"
+                speciality === "Gynaecologist"
                   ? navigate("/doctors")
-                  : navigate("/doctors/Gynecologist")
+                  : navigate("/doctors/Gynaecologist")
               }
               className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-                speciality === "Gynecologist" ? "bg-indigo-100 text-black" : ""
+                speciality === "Gynaecologist" ? "bg-indigo-100 text-black" : ""
               }`}
             >
-              Gynecologist
+              Gynaecologist
             </p>
             <p
               onClick={() =>
